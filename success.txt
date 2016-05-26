@@ -1,0 +1,24 @@
+
+Installation successfull
+
+- test/index.html   - Mocha HTML test page
+- test/test.js      - Skeleton for a new test suite
+- test/mocha.opts   - Configure mocha with this file
+
+
+To install dependencies, run:
+
+    # creates json files for you if you don't have one
+    $ npm init -y
+
+    # Install Mocha and JSDom
+    $ npm install jsdom mocha -D
+
+To launch the tests, run:
+
+    $ mocha
+
+To uninstall and undo the operation, run:
+
+    $ npm uninstall mocha-browser-template
+
