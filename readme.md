@@ -2,10 +2,11 @@
 
 > Template / Boilerplate for Mocha Browser testing with JSDom
 
-
 Install this template with:
 
     npm install mklabs/mocha-browser-template
+
+It is based on [Testing react with jsdom](http://jaketrent.com/post/testing-react-with-jsdom/) article.
 
 ## Overview
 
@@ -61,7 +62,7 @@ Here is the scripts used in this template.
 }
 ```
 
-**Note** One caveats though: currently, there is no easy way to determine the
+**Note** One caveat though: currently, there is no easy way to determine the
 original `$PWD` (current working directory), so we have to rely on `cd ../..`
 to get back to the original directory (works fine with npm 3, didn't tested
 with npm 2)
