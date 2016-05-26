@@ -17,16 +17,19 @@ On installation, the template will create the following files:
 - test/mocha.opts   - Configure mocha with this file
 - test/utils/dom.js - Congirue jsdom environments
 
+To install dependencies, run
 
-To install dependencies, run:
+    $ npm install jsdom mocha chai -D
 
-    $ npm install jsdom mocha -D
+To launch the tests with node, run
 
-To launch the tests, run:
+    $ ./node_modules/.bin/mocha
 
-    $ mocha
+To run the tests directly in the browser, load `test/index.html`
 
-To uninstall and undo the operation, run:
+    open test/index.html
+
+To uninstall and undo the operation, run
 
     $ npm uninstall mocha-browser-template
 
