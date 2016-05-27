@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "mocha",
+    "browser": "opn http://localhost:3000; list test/",
+    "test-chrome": "opn http://localhost:3000 -- google-chrome; npm run browser",
+    "test-firefox": "opn http://localhost:3000 -- firefox; npm run browser"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.2.0",
+    "mocha": "^2.5.3",
+    "micro-list": "^0.4.1",
+    "opn-cli": "^3.1.0"
+  }
+}

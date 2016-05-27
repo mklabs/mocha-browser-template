@@ -2,14 +2,12 @@
   "name": "mocha-browser-template",
   "version": "1.0.0",
   "scripts": {
-    "preinstall": "cat preinstall.txt",
-    "install": "npm run generate",
-    "postinstall": "cat success.txt",
-    "pregenerate": "echo Copying index.html test.js files && mkdir -p ../../test/utils -v",
-    "generate": "cp index.html test.js mocha.opts ../../test/ -v",
-    "postgenerate": "cp test-utils-dom.js ../../test/utils/dom.js -v",
-    "preuninstall": "pwd && echo So sad to see you go ...",
+    "install": "./init.sh",
+    "preuninstall": "echo So sad to see you go ...",
     "uninstall": "cd ../.. && rm test/{index.html,test.js,mocha.opts,utils/dom.js} -v",
-    "postuninstall": "echo postuninstall && pwd"
+    "postuninstall": "echo Done, removed test/{index.html,test.js,mocha.opts,utils/dom.js} files"
+  },
+  "dependencies": {
+    "hcp": "^0.3.1"
   }
 }

@@ -17,24 +17,33 @@ On installation, the template will create the following files:
 - test/mocha.opts   - Configure mocha with this file
 - test/utils/dom.js - Congirue jsdom environments
 
-To install dependencies, run
+And add `jsdom`, `mocha` and `chai` to your package.json devDependencies.
 
-    $ npm install jsdom mocha chai -D
+Additionnaly, the "scripts" field has been extended with the following scripts,
+if not already defined:
+
+```json
+
+```
 
 To launch the tests with node, run
 
-    $ ./node_modules/.bin/mocha
+    $ npm test
 
 To run the tests directly in the browser, load `test/index.html`
 
-    open test/index.html
+    $ npm run browser
 
 To uninstall and undo the operation, run
 
     $ npm uninstall mocha-browser-template
 
 It will remove any files created on installation
-(`test/{index.html,test.js,mocha.opts,utils/dom.js}`)
+(`test/{index.html,test.js,mocha.opts,utils/dom.js}`).
+
+You'd still have to uninstall added dependencies with
+
+    $ npm uninstall jsdom mocha micro-list opn
 
 ## Description
 
@@ -45,23 +54,14 @@ and `rm` commands.
 We can however extend this and use any npm packages and CLI tools available in
 the community to go a little further.
 
-You could even have other dedicated scaffolding tools like Yeoman do the heavy
-work for you and gain access to all its features (without having to install
-`yo` globally).
-
 Here is the scripts used in this template.
 
 ```json
 "scripts": {
-  "preinstall": "cat preinstall.txt",
-  "install": "npm run generate",
-  "postinstall": "cat success.txt",
-  "pregenerate": "echo Copying index.html test.js files && mkdir -p ../../test/utils -v",
-  "generate": "cp index.html test.js mocha.opts ../../test/ -v",
-  "postgenerate": "cp test-utils-dom.js ../../test/utils/dom.js -v",
-  "preuninstall": "pwd && echo So sad to see you go ...",
+  "install": "./init.sh",
+  "preuninstall": "echo So sad to see you go ...",
   "uninstall": "cd ../.. && rm test/{index.html,test.js,mocha.opts,utils/dom.js} -v",
-  "postuninstall": "echo postuninstall && pwd"
+  "postuninstall": "echo Done, removed test/{index.html,test.js,mocha.opts,utils/dom.js} files"
 }
 ```
 
@@ -74,3 +74,11 @@ with npm 2)
 to the first found `package.json` / `node_modules` folder in the tree. It means
 than installing a template will always act on the root of the project, which is
 generally the most suitable thing.
+
+## Related
+
+- [hcp](https://github.com/mklabs/hcp) - A command similar to `cp` to
+  recursively copy files handled as Mustache / Handlebars templates. Started
+  working on `hcp` to complement this idea of npm scaffolding package.
+
+- [template-copy](https://github.com/mklabs/template-copy) - used by `hcp`
