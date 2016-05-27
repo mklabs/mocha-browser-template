@@ -3,11 +3,9 @@
 pwd=$(pwd)
 dir="../.."
 
-ls test/**
-# hcp test/ $dir/test/
-# hcp test-utils-dom.js $dir/test/utils/dom.js
+hcp test/ $dir/test/
 
-echo Adding the following propeties to package.json
+echo Adding the following properties to package.json
 cat dependencies.json
 echo ""
 
